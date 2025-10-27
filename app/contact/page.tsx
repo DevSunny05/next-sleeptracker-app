@@ -15,7 +15,21 @@ const ContactPage = () => {
       <section className="py-16 px-8 bg-white">
         <h2 className="text-3xl font-bold text-center mb-8">Get in Touch</h2>
 
-        <form className="max-w-3xl mx-auto space-y-6">
+        <form
+          className="max-w-3xl mx-auto space-y-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const name = (document.getElementById("name") as HTMLInputElement)
+              ?.value;
+            const email = (document.getElementById("email") as HTMLInputElement)
+              ?.value;
+            const message = (
+              document.getElementById("message") as HTMLTextAreaElement
+            )?.value;
+            const mailtoLink = `sarang.office01@gmail.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`;
+            window.location.href = mailtoLink;
+          }}
+        >
           <div>
             <label
               htmlFor="name"
