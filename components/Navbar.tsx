@@ -11,7 +11,7 @@ const Navbar = async () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0 ">
-                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                <span className="px-2 text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
                   SleepTracker
                 </span>
               </Link>
