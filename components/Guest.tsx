@@ -4,16 +4,18 @@ const Guest = () => {
   return (
     <div className="font-sans bg-gray-100 text-gray-800">
       <div className="flex flex-col md:flex-row items-center justify-between p-3 md:p-16 bg-gray-100 pt-20">
-        <div className="flex-1 mb-8 xl:pl-10">
+        <div className="flex-1 mb-8 xl:pl-10 ">
           <h1 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
             Welcome to SleepTracker
           </h1>
-          <p>
+          <p className="md:text-xl mb-6">
             Track your sleep, improve your health, and wake up feeling refreshed
             with SleepTracker.
           </p>
           <SignInButton>
-            <button>Get Started</button>
+            <button className="w-full  md:w-auto bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white px-4 py-2 rounded-md font-medium cursor-pointer">
+              Get Started
+            </button>
           </SignInButton>
         </div>
         <div className="flex-1 flex justify-center items-center">
