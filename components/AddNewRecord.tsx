@@ -1,10 +1,11 @@
 "use client";
-import addSleepRecord from "@/actions/addSleepRecord";
+
+import addSleepRecord from "@/app/actions/addSleepRecord";
 import { useRef, useState } from "react";
 
 const AddNewRecord = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(6);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
   const [alertType, setAlertType] = useState<"success" | "error" | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +19,7 @@ const AddNewRecord = () => {
     formData.set("text", sleepQuality);
 
     const { error } = await addSleepRecord(formData);
-
+    console.log(error);
     if (error) {
       setAlertMessage(`Error: ${error}`);
       setAlertType("error");
@@ -33,14 +34,17 @@ const AddNewRecord = () => {
     setIsLoading(false);
   };
   return (
-    <div className="bg-gray-100 flex items-center justify-center">
+    <div className="bg-gray-100 flex items-center justify-center font-sans">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full">
-        <h3>Track Your Sleep</h3>
+        <h3 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+          Track Your Sleep
+        </h3>
         <form
           ref={formRef}
           onSubmit={(e) => {
             e.preventDefault();
             const formData = new FormData(formRef.current!);
+            console.log(formData);
             clientAction(formData);
           }}
           className="space-y-6"
@@ -54,15 +58,22 @@ const AddNewRecord = () => {
                 Sleep Quality
               </label>
 
-              <select name="text" id="text">
+              <select
+                id="text"
+                name="text"
+                value={sleepQuality}
+                onChange={(e) => setSleepQuality(e.target.value)}
+                className="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 px-4 py-2"
+                required
+              >
                 <option value="" disabled>
-                  Select Quality
+                  Sleep quality...
                 </option>
-                <option value="Refreshed">Poor</option>
-                <option value="Tired">Average</option>
-                <option value="Neutral">Good</option>
-                <option value="Exhausted">Excellent</option>
-                <option value="Energetic">Excellent</option>
+                <option value="Refreshed">🌞 Refreshed</option>
+                <option value="Tired">😴 Tired</option>
+                <option value="Neutral">😐 Neutral</option>
+                <option value="Exhausted">😫 Exhausted</option>
+                <option value="Energetic">⚡ Energetic</option>
               </select>
             </div>
 
