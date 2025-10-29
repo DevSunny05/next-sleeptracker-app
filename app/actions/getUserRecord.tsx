@@ -4,11 +4,15 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { error } from "console";
 
-const getUserRecord = async () => {
+const getUserRecord = async (): Promise<{
+  record?: number;
+  daysWithRecords?: number;
+  error?: string;
+}> => {
   const { userId } = await auth();
 
   if (!userId) {
-    return { error };
+    return { error: "User not found" };
   }
 
   try {
