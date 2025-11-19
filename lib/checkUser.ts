@@ -18,12 +18,17 @@ export const checkUser = async () => {
     return existingUser;
   }
 
+  const email = user.emailAddresses[0]?.emailAddress;
+  if (!email) {
+    throw new Error("User email is required");
+  }
+
   const newUser = await db.user.create({
     data: {
       clerkUserId: user.id,
       name: `${user.firstName} ${user.lastName}`,
       imageUrl: user.imageUrl,
-      email: user.emailAddresses[0]?.emailAddress,
+      email: email,
     },
   });
 
