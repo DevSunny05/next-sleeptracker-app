@@ -10,7 +10,7 @@ const Guest = () => {
           </h1>
           <p className="md:text-xl mb-6">
             Track your sleep, improve your health, and wake up feeling refreshed
-            with SleepTracker.
+            with SleepTracker
           </p>
           <SignInButton>
             <button className="w-full  md:w-auto bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 hover:from-purple-600 hover:via-pink-600 hover:to-red-600 text-white px-4 py-2 rounded-md font-medium cursor-pointer">
