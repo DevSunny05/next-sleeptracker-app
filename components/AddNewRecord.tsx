@@ -91,7 +91,7 @@ const AddNewRecord = () => {
                 className="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 px-4 py-2"
                 placeholder="Select a date"
                 required
-                onFocus={(e) => e.target.showPicker()} // Open the calendar on focus
+                onFocus={(e) => e.target.showPicker()}
               />
             </div>
           </div>
