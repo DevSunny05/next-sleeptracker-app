@@ -32,7 +32,7 @@ const AverageSleep = async () => {
       <div className="bg-gray-100 flex items-center justify-center min-h-screen">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md text-center">
           <h4 className="text-lg font-medium text-gray-600 mb-2">Error</h4>
-          <p className="text-red-600">Unable to calculate average sleep.</p>
+          <p className="text-red-600">Unable to calculate average sleep</p>
         </div>
       </div>
     );
