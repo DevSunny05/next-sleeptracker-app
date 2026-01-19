@@ -39,4 +39,4 @@ const AverageSleep = async () => {
   }
 };
 
-export default AverageSleep;
+export default AverageSleep
