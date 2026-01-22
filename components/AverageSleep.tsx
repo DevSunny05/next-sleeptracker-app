@@ -21,7 +21,7 @@ const AverageSleep = async () => {
             Your Average Sleep last Month
           </h4>
           <h1 className="sm:text-3xl text-2xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-            {hours} hours {minutes} minutes
+            {hours} hours {minutes} minute
           </h1>
         </div>
       </div>
@@ -39,4 +39,4 @@ const AverageSleep = async () => {
   }
 };
 
-export default AverageSleep
+export default AverageSleep;
